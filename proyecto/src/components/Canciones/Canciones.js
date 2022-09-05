@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import Busqueda from '../Busqueda/Busqueda';
 import Cancion from '../Cancion/Cancion';
 
 function Canciones(props){
@@ -76,7 +77,7 @@ function Canciones(props){
         render(){
             return (
               <>
-              <search filtrar = { (nombre) => this.filtrarMusica(nombre) }/>
+              <Busqueda filtrar = { (nombre) => this.filtrarMusica(nombre) }/>
                 <h2>Top 10 canciones</h2>
                 <section className="card-container">
                   {this.state.musica.map((music, idx) => 

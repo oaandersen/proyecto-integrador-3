@@ -1,18 +1,33 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 class Busqueda extends Component {
-    contructor(props){
-    super(props)
-    this.state={
-        valor:''
-    }}
+    constructor(props){
+        super(props)
+        this.state = {
+            valor:''
+        }
+    }
 
-render(){
-    return(
-        <form>
-            <input value={'hola'}/>
-        </form>
+    evitarSubmit(event){
+        console.log(event)
+        event.preventDefault()
+    }
+
+    guardarValor(event){
+        this.setState({
+            valor: event.target.value
+        }, ()=> this.props.filtrar(this.state.valor)
+        )
+    }
+
+  render() {
+    return (
+      <form onSubmit={(e)=> this.evitarSubmit(e)}>
+        <input onChange={(e)=> this.guardarValor(e)} />
+        <button>Submit</button>
+      </form>
     )
+  }
 }
-}
+
 export default Busqueda
