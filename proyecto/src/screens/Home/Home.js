@@ -1,6 +1,6 @@
 import React from 'react'
+import Albums from '../../components/Albums/Albums';
 import Canciones from '../../components/Canciones/Canciones';
-
 
 function Home(props){
 
@@ -8,6 +8,7 @@ function Home(props){
         <>
         <h1> Home del Sitio</h1>
         <Canciones/>
+        <Albums/>
         </>
     )
 }

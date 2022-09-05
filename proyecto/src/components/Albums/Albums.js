@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 import Busqueda from '../Busqueda/Busqueda';
-import Cancion from '../Cancion/Cancion';
+import Album from '../Album/Album';
 
 
 
-    class Canciones extends Component {
+    class Albums extends Component {
         constructor(props){
           super(props)
           this.state={
@@ -84,14 +84,14 @@ import Cancion from '../Cancion/Cancion';
             return (
               <>
               <Busqueda filtrar = { (nombre) => this.filtrarMusica(nombre) }/>
-                <h2>Top 10 canciones</h2>
+                <h2>Top 10 Albums</h2>
                 <section>
                   {this.state.musica.map((music, idx) => 
-                    <Cancion 
+                    <Album 
                       key={`${Date.now()}-${idx}`}
                       info={music}
                       borrar={(name)=> this.borrar(name)}
-                      favorito={(id)=> this.favorites(id)}
+                      favorito={(id)=> this.favorites(id)}  
                     />)}
         
                     <button onClick={()=> this.backup()}>Backup</button>
@@ -103,6 +103,5 @@ import Cancion from '../Cancion/Cancion';
           }
         }
         
-        export default  Canciones;
+        export default  Albums;
    
-
