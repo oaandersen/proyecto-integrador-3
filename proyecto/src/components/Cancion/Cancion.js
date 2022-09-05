@@ -28,12 +28,12 @@ class Cancion extends Component {
         return (
                 <div className="Cancion-card">
                     <img 
-                        src={this.props.info.image}
+                        src={this.props.info.artist.picture}
                         alt={`Una imagen de ${this.props.info.name}`}
                     />
-                    <h4>{this.props.info.name}</h4>
-                    <p>Cancion description:</p>
-                    <p>{this.props.info.status}</p>
+                    <h4>{this.props.info.title}</h4>
+                    <p>Duracion de la Cancion:</p>
+                    <p>{this.props.info.duration}</p>
                     <p>{this.props.info.species}</p>
                     {
                     this.state.showMore ?
@@ -44,7 +44,7 @@ class Cancion extends Component {
                     <a onClick={() => this.changeShowMore()}> {this.state.textoBoton} </a>
                     
                     <button onClick={()=> this.props.favorito(this.props.info.id)}>Favoritos</button>
-                    <button onClick={() => this.props.borrar(this.props.info.id)}>borrar</button>
+                    <button onClick={() => this.props.borrar(this.props.info.id)}>Borrar</button>
                 </div>
 
             )

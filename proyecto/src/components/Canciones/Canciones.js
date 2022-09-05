@@ -2,9 +2,7 @@ import React, {Component} from 'react'
 import Busqueda from '../Busqueda/Busqueda';
 import Cancion from '../Cancion/Cancion';
 
-function Canciones(props){
 
-    const info=[];
 
     class Canciones extends Component {
         constructor(props){
@@ -21,11 +19,12 @@ function Canciones(props){
         componentDidMount(){
           fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?limit=10%27')
           .then(resp => resp.json())
-          .then(data => this.setState({
-            musica: data.results,
-            backup: data.results,
+          .then(data =>{ this.setState({
+            musica: data.data,
+            backup: data.data,
             pagina: this.state.pagina + 1
-          }))
+          })
+        console.log(data)})
           .catch(err => console.log(err))
         }
       
@@ -33,7 +32,7 @@ function Canciones(props){
           fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?limit=10?page=${this.state.pagina + 1}`)
           .then(resp => resp.json())
           .then(data => this.setState({
-            musica: this.state.musica.concat(data.results),
+            musica: this.state.musica.concat(data.data),
             pagina: this.state.pagina + 1
           }))
           .catch(err => console.log(err))
@@ -79,7 +78,7 @@ function Canciones(props){
               <>
               <Busqueda filtrar = { (nombre) => this.filtrarMusica(nombre) }/>
                 <h2>Top 10 canciones</h2>
-                <section className="card-container">
+                <section>
                   {this.state.musica.map((music, idx) => 
                     <Cancion 
                       key={`${Date.now()}-${idx}`}
@@ -91,10 +90,11 @@ function Canciones(props){
                     <button onClick={()=> this.backup()}>Backup</button>
                     <button onClick={()=> this.cargarMas()}>Cargar mas</button>
                 </section>
+
               </>
             )
           }
-        }}
+        }
         
         export default  Canciones;
    
