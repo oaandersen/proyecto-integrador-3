@@ -17,23 +17,25 @@ import Cancion from '../Cancion/Cancion';
         }
       
         componentDidMount(){
-          fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?limit=10%27')
+          fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?index=15&limit=10%27')
           .then(resp => resp.json())
           .then(data =>{ this.setState({
             musica: data.data,
             backup: data.data,
-            pagina: this.state.pagina + 1
+            pagina: this.state.pagina + 1,
+            index: 10
           })
         console.log(data)})
           .catch(err => console.log(err))
         }
       
         cargarMas(){
-          fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?limit=10?page=${this.state.pagina + 1}`)
+          fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?index=${this.state.index + 10}&limit=10?page=${this.state.pagina + 1}`)
           .then(resp => resp.json())
           .then(data => this.setState({
             musica: this.state.musica.concat(data.data),
-            pagina: this.state.pagina + 1
+            pagina: this.state.pagina + 1,
+            index: this.state.index + 10
           }))
           .catch(err => console.log(err))
       

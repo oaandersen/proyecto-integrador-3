@@ -31,10 +31,12 @@ class Cancion extends Component {
                         src={this.props.info.artist.picture}
                         alt={`Una imagen de ${this.props.info.name}`}
                     />
-                    <h4>{this.props.info.title}</h4>
-                    <p>Duracion de la Cancion:</p>
-                    <p>{this.props.info.duration}</p>
-                    <p>{this.props.info.species}</p>
+                    <h3>{this.props.info.title}</h3>
+                    <h4> Nombre Artista: {this.props.info.artist.name}</h4>
+                    <h4> Album: {this.props.info.album.title}</h4>
+                    <p>Duracion de la Cancion: {this.props.info.duration}s</p>
+                   
+                
                     {
                     this.state.showMore ?
                         <p>{this.props.info.extra}</p>
@@ -42,7 +44,8 @@ class Cancion extends Component {
                     ''
                     }
                     <a onClick={() => this.changeShowMore()}> {this.state.textoBoton} </a>
-                    
+
+                    <button onClick={()=> this.props.detalle(this.props.info.id)}>Detalle</button>
                     <button onClick={()=> this.props.favorito(this.props.info.id)}>Favoritos</button>
                     <button onClick={() => this.props.borrar(this.props.info.id)}>Borrar</button>
                 </div>
