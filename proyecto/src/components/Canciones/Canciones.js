@@ -41,6 +41,8 @@ import Cancion from '../Cancion/Cancion';
       
         }
       
+       
+
         favorites(id){
           let favoritoArr = this.state.musica.filter(elm => elm.id === id)
           this.setState({
@@ -75,6 +77,9 @@ import Cancion from '../Cancion/Cancion';
         })
         } 
 
+
+        
+        
         render(){
             return (
               <>

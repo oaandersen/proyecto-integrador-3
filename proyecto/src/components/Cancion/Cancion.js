@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 import './styles.css'
 
 class Cancion extends Component {
@@ -45,7 +46,7 @@ class Cancion extends Component {
                     }
                     <a onClick={() => this.changeShowMore()}> {this.state.textoBoton} </a>
 
-                    <button onClick={()=> this.props.detalle(this.props.info.id)}>Detalle</button>
+                    <Link to={'/Detail/' + this.props.info.id}> Detalle</Link>
                     <button onClick={()=> this.props.favorito(this.props.info.id)}>Favoritos</button>
                     <button onClick={() => this.props.borrar(this.props.info.id)}>Borrar</button>
                 </div>
