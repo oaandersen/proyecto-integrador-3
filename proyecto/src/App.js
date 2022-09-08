@@ -4,6 +4,7 @@ import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import Detail from './screens/Detail/Detail'
 import Home from './screens/Home/Home'
+import PaginaNotFound from './screens/PaginaNotFound/PaginaNotFound'
 import ViewAll from './screens/ViewAll/ViewAll'
 import Favoritos from './screens/Favoritos/Favoritos'
 

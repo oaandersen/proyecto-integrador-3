@@ -41,7 +41,7 @@ class Album extends Component {
                     this.state.showMore ?
                     
                         <div> 
-                        <h4>Descripcion Album:</h4>
+                        <h4>Descripcion Album: No hay descripcion en este Album!</h4>
                         <h4>{}</h4>
                         </div>
                     : 
