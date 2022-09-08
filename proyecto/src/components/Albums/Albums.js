@@ -84,8 +84,8 @@ import Album from '../Album/Album';
             return (
               <>
               <Busqueda filtrar = { (nombre) => this.filtrarMusica(nombre) }/>
-                <h2 class="titulo-home">Top 10 Albums</h2>
-                <section>
+                <h2 className='titulo-home'>Top 10 Albums</h2>
+                <section className='canciones-card'>
                   {this.state.musica.map((music, idx) => 
                     <Album 
                       key={`${Date.now()}-${idx}`}

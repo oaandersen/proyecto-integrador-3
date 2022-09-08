@@ -27,7 +27,7 @@ class Cancion extends Component {
 
     render(){
         return (
-                <div className="Cancion-card">
+                <div className="cancion-card">
                     <img 
                         src={this.props.info.artist.picture}
                         alt={`Una imagen de ${this.props.info.name}`}

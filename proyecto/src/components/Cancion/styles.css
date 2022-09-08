@@ -1,0 +1,8 @@
+.canciones-card{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: rgb(137, 255, 110);
+    padding: 20px 20px 10px 20px;
+}
