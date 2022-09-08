@@ -84,7 +84,7 @@ import Album from '../Album/Album';
             return (
               <>
               <Busqueda filtrar = { (nombre) => this.filtrarMusica(nombre) }/>
-                <h2>Top 10 Albums</h2>
+                <h2 class="titulo-home">Top 10 Albums</h2>
                 <section>
                   {this.state.musica.map((music, idx) => 
                     <Album 

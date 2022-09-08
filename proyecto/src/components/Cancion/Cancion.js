@@ -33,14 +33,16 @@ class Cancion extends Component {
                         alt={`Una imagen de ${this.props.info.name}`}
                     />
                     <h3>{this.props.info.title}</h3>
-                    <h4> Nombre Artista: {this.props.info.artist.name}</h4>
-                    <h4> Album: {this.props.info.album.title}</h4>
-                    <p>Duracion de la Cancion: {this.props.info.duration}s</p>
+                    
                    
                 
                     {
                     this.state.showMore ?
-                        <p>{this.props.info.extra}</p>
+                    <div> 
+                    <h4> Nombre Artista: {this.props.info.artist.name}</h4>
+                    <h4> Album: {this.props.info.album.title}</h4>
+                    <p>Duracion de la Cancion: {this.props.info.duration}s</p>
+                    </div>  
                     : 
                     ''
                     }

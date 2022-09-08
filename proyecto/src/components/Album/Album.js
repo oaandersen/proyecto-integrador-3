@@ -35,12 +35,15 @@ class Album extends Component {
         
                     <h3> Nombre Album: {this.props.info.album.title}</h3>
 
-                    <h4>Descripcion Album:</h4>
                     
                 
                     {
                     this.state.showMore ?
-                        <p>{this.props.info.extra}</p>
+                    
+                        <div> 
+                        <h4>Descripcion Album:</h4>
+                        <h4>{}</h4>
+                        </div>
                     : 
                     ''
                     }
