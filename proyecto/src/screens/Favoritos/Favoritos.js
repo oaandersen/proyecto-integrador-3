@@ -1,14 +1,38 @@
-import React from 'react'
+import React, {Component} from 'react'
 
+class Favoritos extends Component{
+constructor(props){
+    super(props)
+    this.state = {
+        arrFavs:[]
+    }
+}
+componentDidMount(){
+    let storage = localStorage.getitem('Favoritos')
+    if(storage !== null){
+        let parsedStorage = JSON.parse(storage)
 
+        Promise.all(     parsedStorage.map(elm => {
+            return(
+            fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?${elm}`)
+            .then(resp => resp.json())
+            
 
-function Favoritos(props){
+        )}))
+.then(data=> this.setState(
+    arrFavs=>data
+))
+.catch(err => console.log(err))
+    }
+}
+    render(){
+        return(
+            <div>
+                Favoritos
+            </div>
+        )
+    }
 
-    return(
-        <>
-        <h1> Favoritos del Sitio</h1>
-        </>
-    )
 }
 
 export default Favoritos;
