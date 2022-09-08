@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 
-class Detalle extends Component {
+class DetalleAlbum extends Component {
     constructor(props){
       super(props)
       this.state={
@@ -15,7 +15,7 @@ class Detalle extends Component {
 
     componentDidMount(){
         console.log('pasa por aqui');
-        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/track/${this.musica.album.id}`)
+        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${this.props.id}`)
         .then(resp => resp.json())
         .then(data =>{ this.setState({
           musica: data,
@@ -38,15 +38,9 @@ class Detalle extends Component {
             {
                 
                     
-                this.state.ready ?<div>
-                <img 
-                src={this.state.musica.album.cover}
-                alt={`Una imagen de ${this.state.musica.album.cover}`}
-            />
-                <h1>Cancion: {this.state.musica.title}</h1>
-                <h1>Artista: {this.state.musica.artist.name}</h1>
-                <h2>Disco: {this.state.musica.album.title}</h2>
-                <iframe title="iframe" src={this.state.musica.preview} />
+                this.state.ready ?
+                <div>
+                
                 </div>
                 :
                 <h1>Cargando...</h1>
@@ -61,4 +55,4 @@ class Detalle extends Component {
 }
     
 
-export default Detalle
+export default DetalleAlbum

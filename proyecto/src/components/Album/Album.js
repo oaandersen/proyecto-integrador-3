@@ -49,7 +49,7 @@ class Album extends Component {
                     }
                     <a onClick={() => this.changeShowMore()}> {this.state.textoBoton} </a>
 
-                    <Link to={'/Detail/' + this.props.info.id}> Detalle</Link>
+                    <Link to={'/DetailAlbum/' + this.props.info.id}> Detalle</Link>
                     <button onClick={()=> this.props.favorito(this.props.info.id)}>Favoritos</button>
                     <button onClick={() => this.props.borrar(this.props.info.id)}>Borrar</button>
                 </div>
