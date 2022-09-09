@@ -1,11 +1,41 @@
-/* header */
+header{
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    background-color: #E1F5FF;
+    align-items: center;
+    padding: 10px;
+}
 
-.header {
-    padding: 20px 0;
-    margin-top: 80px;
-  }
-   a {
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+a{
     text-decoration: none;
     color: black;
-    
-  }
+}
+nav  p {
+    font-weight: 600;
+    padding-right: 10px;
+}
+
+nav p:hover{
+    color: #48429A;
+}
+.header-separador {
+    width: 100%;
+    border: none;
+    height: 1.5px;
+    margin-top:2px;
+    background-color: #48429A;
+}
+.nombre-empresa {
+    color:  #48429A;
+}
