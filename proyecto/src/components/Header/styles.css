@@ -5,6 +5,7 @@ header{
     background-color: #E1F5FF;
     align-items: center;
     padding: 10px;
+    
 }
 
 .logo {
@@ -21,12 +22,12 @@ a{
     text-decoration: none;
     color: black;
 }
-nav  p {
+nav  a {
     font-weight: 600;
     padding-right: 10px;
 }
 
-nav p:hover{
+nav a:hover{
     color: #48429A;
 }
 .header-separador {

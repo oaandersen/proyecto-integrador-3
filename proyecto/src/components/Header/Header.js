@@ -13,11 +13,9 @@ function Header() {
                 </a>
 
                 <nav>
-                
                     <Link to='/'>Home</Link>
 
                     <Link to='/Favoritos'>Favoritos</Link>
-
                 </nav>
 
                
