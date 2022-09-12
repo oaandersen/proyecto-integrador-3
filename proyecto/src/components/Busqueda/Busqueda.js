@@ -16,8 +16,8 @@ class Busqueda extends Component {
     guardarValor(event){
         this.setState({
             valor: event.target.value
-        }, ()=> this.props.filtrar(this.state.valor)
-        )
+        }, ()=> this.props.filter(this.state.valor)
+        ) 
     }
 
   render() {

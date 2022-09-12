@@ -1,9 +1,26 @@
-import React from 'react'
+import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
+import Busqueda from '../Busqueda/Busqueda'
 import './styles.css'
 
-function Header() {
+class Header extends Component {
+    constructor(props){
+      super(props)
+      this.state={
+        musica: [],
+        backup: [],
+        busqueda:'',
+      }
+    } 
 
+    filtrarMusica(nombre) {
+        let arrayFiltrado = this.state.backup.filter(music=> music.name.toLowerCase().includes(nombre))
+      this.setState({
+       musica:arrayFiltrado
+      })
+      } 
+      
+      render(){
     return (
         <>
             <header className='header'>
@@ -25,6 +42,7 @@ function Header() {
         </>
     )
 }
+    }
 
 export default Header;
 

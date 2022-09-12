@@ -70,20 +70,10 @@ import Cancion from '../Cancion/Cancion';
             musica: this.state.backup
           })
         }
-        filtrarMusica(nombre) {
-          let arrayFiltrado = this.state.backup.filter(music=> music.name.toLowerCase().includes(nombre))
-        this.setState({
-         musica:arrayFiltrado
-        })
-        } 
 
-
-        
-        
         render(){
             return (
               <>
-              <Busqueda filtrar = { (nombre) => this.filtrarMusica(nombre) }/>
                 <h2 className='titulo-home'>Top 10 canciones</h2>
                 <section className='canciones-card'>
                   {this.state.musica.map((music, idx) => 
