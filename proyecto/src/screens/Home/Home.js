@@ -6,7 +6,6 @@ function Home(props){
 
     return(
         <>
-        <h1> Home del Sitio</h1>
         <Canciones/>
         <Albums/>
         </>

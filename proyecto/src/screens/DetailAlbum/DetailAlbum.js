@@ -3,12 +3,12 @@ import DetalleAlbum from '../../components/DetalleAlbum/DetalleAlbum';
 
 function DetailAlbum(props){
 
-    const id = props.match.params.id
+    const idAlbum = props.match.params.id
 
 
     return(
         <>
-        <DetalleAlbum id={id}/> 
+        <DetalleAlbum idAlbum={idAlbum}/> 
         </> 
     )
 }

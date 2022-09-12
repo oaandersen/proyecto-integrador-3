@@ -15,7 +15,7 @@ class Detalle extends Component {
 
     componentDidMount(){
         console.log('pasa por aqui');
-        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/track/${this.musica.album.id}`)
+        fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/track/${this.props.id}`)
         .then(resp => resp.json())
         .then(data =>{ this.setState({
           musica: data,
@@ -29,7 +29,7 @@ class Detalle extends Component {
     }
 
     render(){
-        console.log('Este es desde el render')
+      console.log('Este es desde el render')
        console.log(this.state.musica);
         return(
             
@@ -38,7 +38,7 @@ class Detalle extends Component {
             {
                 
                     
-                this.state.ready ?<div>
+                this.state.ready ? <div>
                 <img 
                 src={this.state.musica.album.cover}
                 alt={`Una imagen de ${this.state.musica.album.cover}`}

@@ -33,7 +33,7 @@ class Album extends Component {
                         alt={`Una imagen de ${this.props.info.name}`}
                     />
         
-                    <h3> Nombre Album: {this.props.info.album.title}</h3>
+                    <h3> Album: {this.props.info.album.title}</h3>
 
                     
                 
@@ -49,7 +49,7 @@ class Album extends Component {
                     }
                     <a onClick={() => this.changeShowMore()}> {this.state.textoBoton} </a>
 
-                    <Link to={'/DetailAlbum/' + this.props.info.id}> Detalle</Link>
+                    <Link to={'/DetailAlbum/' + this.props.info.album.id}> Detalle</Link>
                     <button onClick={()=> this.props.favorito(this.props.info.id)}>Favoritos</button>
                     <button onClick={() => this.props.borrar(this.props.info.id)}>Borrar</button>
                 </div>
