@@ -18,7 +18,7 @@ function Header() {
                     <Link to='/Favoritos'>Favoritos</Link>
                 </nav>
 
-               
+               <Busqueda />
 
             </header>
             <hr className="header-separador" />

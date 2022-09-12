@@ -8,7 +8,7 @@ constructor(props){
     }
 }
 componentDidMount(){
-    let storage = localStorage.getitem('Favoritos')
+    let storage = localStorage.getItem('Favoritos')
     if(storage !== null){
         let parsedStorage = JSON.parse(storage)
 
