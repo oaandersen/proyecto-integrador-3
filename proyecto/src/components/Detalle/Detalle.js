@@ -47,7 +47,7 @@ class Detalle extends Component {
                 <h1>Artista: {this.state.musica.artist.name}</h1>
                 <h2>Disco: {this.state.musica.album.title}</h2>
                 <iframe title="iframe" src={this.state.musica.preview} />
-                </div>
+                </div>  
                 :
                 <h1>Cargando...</h1>
 

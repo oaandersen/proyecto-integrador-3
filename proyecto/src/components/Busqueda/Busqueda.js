@@ -23,7 +23,7 @@ class Busqueda extends Component {
   render() {
     return (
       <form onSubmit={(e)=> this.evitarSubmit(e)}>
-        <input onChange={(e)=> this.guardarValor(e)} />
+        <input onChange={(e)=> this.guardarValor(e)} value={this.state.valor} />
         <button>Submit</button>
       </form>
     )

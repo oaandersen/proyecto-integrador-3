@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
-import Busqueda from '../Busqueda/Busqueda'
+
 import './styles.css'
 
 class Header extends Component {
@@ -13,13 +13,7 @@ class Header extends Component {
       }
     } 
 
-    filtrarMusica(nombre) {
-        let arrayFiltrado = this.state.backup.filter(music=> music.name.toLowerCase().includes(nombre))
-      this.setState({
-       musica:arrayFiltrado
-      })
-      } 
-      
+  
       render(){
     return (
         <>
@@ -35,7 +29,7 @@ class Header extends Component {
                     <Link to='/Favoritos'>Favoritos</Link>
                 </nav>
 
-               <Busqueda />
+
 
             </header>
             <hr className="header-separador" />
