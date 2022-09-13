@@ -16,7 +16,7 @@ class Busqueda extends Component {
     guardarValor(event){
         this.setState({
             valor: event.target.value
-        }, ()=> this.props.filter(this.state.valor)
+        }, ()=> this.props.metodoBuscar(this.state.valor)
         ) 
     }
 
@@ -24,7 +24,6 @@ class Busqueda extends Component {
     return (
       <form onSubmit={(e)=> this.evitarSubmit(e)}>
         <input onChange={(e)=> this.guardarValor(e)} value={this.state.valor} />
-        <button>Submit</button>
       </form>
     )
   }

@@ -8,12 +8,17 @@ class Home extends Component{
     this.state={
       musica: [],
       backup: [],
-      busqueda:'',
+      buscar:false,
+      guardarValor: [],
+      ready:false,
+      topList:{},
+
+
     }
   } 
 
     buscarData(valor){
-fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/search?q=${valor}`)
+fetch(`https://thingproxy.freeboard.io/fetch/https://api.deezer.com/search/artist?q=${valor}`)
 .then(resp => resp.json())
 .then(data => {console.log(data)
 this.setState({
@@ -26,12 +31,10 @@ this.setState({
     render(){
     return(
         <>
-        <Busqueda buscar = {(valor) => this.buscar} />
+        <Busqueda metodoBuscar = {(valor) => this.buscarData(valor)} />
         <Canciones/>
         <Albums/>
-        {
-           
-        }
+
         </>
     )
 }
