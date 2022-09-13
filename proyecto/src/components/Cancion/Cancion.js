@@ -7,7 +7,7 @@ class Cancion extends Component {
         super(props)
         this.state ={
             showMore:false,
-            textoBoton:'Ver mas'
+            textoBoton:'Ver mas',
         }
     }
 
@@ -27,12 +27,15 @@ class Cancion extends Component {
 
     render(){
         return (
-                <div className="cancion-card">
-                    <img 
-                        src={this.props.info.artist.picture}
-                        alt={`Una imagen de ${this.props.info.name}`}
-                    />
-                    <h3>{this.props.info.title}</h3>
+                
+                    <>
+                    
+                        <div className="cancion-card">
+                            <img 
+                                src={this.props.info.artist.picture}
+                                alt={`Una imagen de ${this.props.info.name}`}
+                            />
+                            <h3>{this.props.info.title}</h3>
                     
                    
                 
@@ -51,8 +54,12 @@ class Cancion extends Component {
                     <Link to={'/Detail/' + this.props.info.id}> Detalle</Link>
                     <button onClick={()=> this.props.favorito(this.props.info.id)}>Favoritos</button>
                     <button onClick={() => this.props.borrar(this.props.info.id)}>Borrar</button>
-                </div>
+            
+                    </div>
+                    
 
+                    </>    
+            
             )
     }
 }

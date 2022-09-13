@@ -20,6 +20,7 @@ function App() {
         <Route path={'/DetailAlbum/:id'} component={DetailAlbum} />
         <Route path={'/ViewAll'} component={ViewAll} />
         <Route path={'/Favoritos'} component={Favoritos} />
+        <Route path={''} component={PaginaNotFound} />
       </Switch>
       <Footer/>
     </>

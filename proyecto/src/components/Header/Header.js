@@ -1,9 +1,20 @@
-import React from 'react'
+import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
+
 import './styles.css'
 
-function Header() {
+class Header extends Component {
+    constructor(props){
+      super(props)
+      this.state={
+        musica: [],
+        backup: [],
+        busqueda:'',
+      }
+    } 
 
+  
+      render(){
     return (
         <>
             <header className='header'>
@@ -18,13 +29,14 @@ function Header() {
                     <Link to='/Favoritos'>Favoritos</Link>
                 </nav>
 
-               
+
 
             </header>
             <hr className="header-separador" />
         </>
     )
 }
+    }
 
 export default Header;
 

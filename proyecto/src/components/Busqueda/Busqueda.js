@@ -16,14 +16,14 @@ class Busqueda extends Component {
     guardarValor(event){
         this.setState({
             valor: event.target.value
-        }, ()=> this.props.filtrar(this.state.valor)
-        )
+        }, ()=> this.props.filter(this.state.valor)
+        ) 
     }
 
   render() {
     return (
       <form onSubmit={(e)=> this.evitarSubmit(e)}>
-        <input onChange={(e)=> this.guardarValor(e)} />
+        <input onChange={(e)=> this.guardarValor(e)} value={this.state.valor} />
         <button>Submit</button>
       </form>
     )

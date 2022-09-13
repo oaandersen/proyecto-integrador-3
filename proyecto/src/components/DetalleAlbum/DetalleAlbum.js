@@ -45,8 +45,23 @@ class DetalleAlbum extends Component {
             />
                 <h1>Album: {this.state.musica.title}</h1>
                 <h1>Artista: {this.state.musica.artist.name}</h1>
+<<<<<<< HEAD
                 <p> {this.state.musica.tracks.data.title} </p>
                 </div> 
+=======
+                <p> Lista de Canciones del Album:</p>
+                <ul> 
+                  
+                  {this.state.musica.tracks.data.map((track) =>{
+                    return <li>{track.title}</li>
+                  })} 
+                  
+                </ul>
+
+                </div>
+
+              
+>>>>>>> 19604196368a6faddc0d7ae286db9c9c08d84c5a
                 :
                 <h1>Cargando...</h1>
             }

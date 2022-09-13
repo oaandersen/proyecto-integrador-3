@@ -12,18 +12,20 @@ import Cancion from '../Cancion/Cancion';
             backup: [],
             busqueda:'',
             pagina:0,
-            favorito:[]
+            favorito:[],
+            ready:false
           }
         }
       
         componentDidMount(){
-          fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?index=15&limit=10%27')
+          fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?index=15&limit=10')
           .then(resp => resp.json())
           .then(data =>{ this.setState({
             musica: data.data,
             backup: data.data,
             pagina: this.state.pagina + 1,
-            index: 10
+            index: 10,
+            ready:true
           })
         console.log(data)})
           .catch(err => console.log(err))
@@ -70,20 +72,12 @@ import Cancion from '../Cancion/Cancion';
             musica: this.state.backup
           })
         }
-        filtrarMusica(nombre) {
-          let arrayFiltrado = this.state.backup.filter(music=> music.name.toLowerCase().includes(nombre))
-        this.setState({
-         musica:arrayFiltrado
-        })
-        } 
 
-
-        
-        
         render(){
             return (
               <>
-              <Busqueda filtrar = { (nombre) => this.filtrarMusica(nombre) }/>
+              { this.state.ready ?
+              <div>
                 <h2 className='titulo-home'>Top 10 canciones</h2>
                 <section className='canciones-card'>
                   {this.state.musica.map((music, idx) => 
@@ -97,7 +91,10 @@ import Cancion from '../Cancion/Cancion';
                     <button onClick={()=> this.backup()}>Backup</button>
                     <button onClick={()=> this.cargarMas()}>Cargar mas</button>
                 </section>
-               
+                </div>  
+                                :
+                                <h1>Cargando...</h1>
+                }
               </>
             )
           }
