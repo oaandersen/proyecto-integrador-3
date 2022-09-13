@@ -35,9 +35,7 @@ class DetalleAlbum extends Component {
             
             <>
             
-            {
-                
-                    
+            {       
                 this.state.ready ?
                 <div>
                  
@@ -48,15 +46,10 @@ class DetalleAlbum extends Component {
                 <h1>Album: {this.state.musica.title}</h1>
                 <h1>Artista: {this.state.musica.artist.name}</h1>
                 <p> {this.state.musica.tracks.data.title} </p>
-                </div>
-
-              
+                </div> 
                 :
                 <h1>Cargando...</h1>
-
-                
             }
-            
             </>
     
 
