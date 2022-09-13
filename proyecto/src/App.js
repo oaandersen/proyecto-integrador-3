@@ -21,6 +21,7 @@ function App() {
         <Route path={'/ViewAll'} component={ViewAll} />
         <Route path={'/Favoritos'} component={Favoritos} />
         <Route path={''} component={PaginaNotFound} />
+        <Route path={'/ViewAll'} component={ViewAll} />
       </Switch>
       <Footer/>
     </>

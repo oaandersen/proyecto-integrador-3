@@ -27,6 +27,8 @@ class Header extends Component {
                     <Link to='/'>Home</Link>
 
                     <Link to='/Favoritos'>Favoritos</Link>
+
+                    <Link to='/ViewAll'>View All</Link>
                 </nav>
 
 

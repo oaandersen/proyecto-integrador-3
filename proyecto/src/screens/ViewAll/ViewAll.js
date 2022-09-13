@@ -1,12 +1,13 @@
 import React from 'react'
-
-
+import VerTodo from '../../components/VerTodo/VerTodo';
 
 function ViewAll(props){
 
+    const id = props.match.params.id
+
     return(
         <>
-        <h1> ViewAll del Sitio</h1>
+        < VerTodo id={id}/>
         </>
     )
 }
