@@ -16,6 +16,8 @@ import Cancion from '../Cancion/Cancion';
           }
         }
       
+
+        
         componentDidMount(){
           fetch('https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?index=15&limit=10')
           .then(resp => resp.json())
@@ -45,17 +47,15 @@ import Cancion from '../Cancion/Cancion';
        
 
         favorites(id){
-          let favoritoArr = this.state.musica.filter(elm => elm.id === id)
-          this.setState({
-            favorito: this.state.favorito.concat(favoritoArr)
-          })
-      
-          let arrayAGuardar = JSON.stringify(this.state.favorito)
-      
-          localStorage.setItem('favoritos', arrayAGuardar)
-      
-          let recuperarStorage = localStorage.getItem('favoritos')
-          console.log(JSON.parse(recuperarStorage))
+          let arrayAguardar = []
+          let recuperarStorage = JSON.parse(localStorage.getItem('favoritos'))
+          if(recuperarStorage!=null){
+            recuperarStorage.map((e)=>{
+              arrayAguardar.push(e)
+            })
+          }
+          arrayAguardar.push(id)
+          localStorage.setItem('favoritos',JSON.stringify(arrayAguardar))
         }
       
       

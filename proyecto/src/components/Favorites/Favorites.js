@@ -5,7 +5,9 @@ class Favorites extends Component {
         constructor(props){
             super(props)
             this.state = {
-                arrFavs:[]
+                arrFavs:[],
+                arrayAguardar: []
+                
             }
         }
         componentDidMount(){
@@ -32,7 +34,7 @@ class Favorites extends Component {
                 {
                 this.state.ready ? 
                 <div>
-
+                <p>  </p>
                 </div>
                 :
                 <h1>Cargando...</h1>

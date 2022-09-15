@@ -8,17 +8,7 @@ class Busqueda extends Component {
         }
     }
 
-    evitarSubmit(event){
-        console.log(event)
-        event.preventDefault()
-    }
-
-    guardarValor(event){
-        this.setState({
-            valor: event.target.value
-        }, ()=> this.props.metodoBuscar(this.state.valor)
-        ) 
-    }
+   
 
   render() {
     return (
