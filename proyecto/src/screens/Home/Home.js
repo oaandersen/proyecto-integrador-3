@@ -40,8 +40,7 @@ class Home extends Component {
   render() {
     return ( 
       <>
-      <
-      Busqueda metodoBuscar = {
+      < Busqueda metodoBuscar = {
         (valor) => this.buscarData(valor)
       }
       /> {
@@ -52,7 +51,7 @@ class Home extends Component {
             info = {
               music
             }
-            /> ): ''
+           /> ): ''
           } {
             /*
                       this.state.ready
@@ -62,10 +61,8 @@ class Home extends Component {
                       </> : 
                         'Cargando..'
                   */
-          } <
-          Canciones / >
-          <
-          Albums / >
+          } <Canciones / >
+          <Albums / >
 
           </>
       )

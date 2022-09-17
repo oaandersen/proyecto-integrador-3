@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import Cancion from "../Cancion/Cancion";
 import Canciones from "../Canciones/Canciones";
 import './styles.css'
 
@@ -7,11 +8,12 @@ class Favorites extends Component {
             super(props)
             this.state = {
                 arrFavs:[],
-                arrayAguardar: []
-                
+                arrayAguardar: [],
+                ready:false
             }
         }
         componentDidMount(){
+            console.log('aca')
             let storage = localStorage.getItem('Favorites')
             if(storage !== null){
                 let parsedStorage = JSON.parse(storage)
@@ -23,9 +25,12 @@ class Favorites extends Component {
                     
         
                 )}))
-        .then(data=> this.setState({
-            arrFavs:data
-            }))
+        .then(data=> {this.setState({
+            arrFavs:data,
+            ready:true
+            })
+            console.log(data)})
+            
         .catch(err => console.log(err))
             }
         }
@@ -34,20 +39,15 @@ class Favorites extends Component {
                 <>
                 {
                 this.state.ready ? 
-                <div>
-<<<<<<< HEAD
-                    {this.state.arrFavs.map((music, idx)=>
-                    <Canciones
+                    
+                    this.state.arrFavs.map((music, idx)=>
+                    <Cancion
                     key={`${Date.now()}-${idx}`}
                     info={music}
-                    />)}
-=======
-                <p>  </p>
->>>>>>> 75bb51b8ef332fe52e7bd5df7211c0af0d1cbcae
-                </div>
-                :
-                <h1>Cargando...</h1>
-               }
+                /> ): ""
+            
+                }
+            
                 </>
             )
         }

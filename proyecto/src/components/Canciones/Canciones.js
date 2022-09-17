@@ -47,15 +47,17 @@ import Cancion from '../Cancion/Cancion';
        
 
         favorites(id){
-          let arrayAguardar = []
-          let recuperarStorage = JSON.parse(localStorage.getItem('favoritos'))
-          if(recuperarStorage!=null){
-            recuperarStorage.map((e)=>{
-              arrayAguardar.push(e)
-            })
-          }
-          arrayAguardar.push(id)
-          localStorage.setItem('favoritos',JSON.stringify(arrayAguardar))
+          let favoritoArr = this.state.personajes.filter(elm => elm.id === id)
+          this.setState({
+            favorito: this.state.favorito.concat(favoritoArr)
+          })
+      
+          let arrayAGuardar = JSON.stringify(this.state.favorito)
+      
+          localStorage.setItem('favoritos', arrayAGuardar)
+      
+          let recuperarStorage = localStorage.getItem('favoritos')
+          console.log(JSON.parse(recuperarStorage))
         }
       
       

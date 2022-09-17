@@ -8,6 +8,21 @@ class Cancion extends Component {
         this.state ={
             showMore:false,
             textoBoton:'Ver mas',
+            favorito: false,
+        }
+    }
+
+    componentDidMount(){
+        let storage = localStorage.getItem('favoritos')
+        let parsedStorage = JSON.parse(storage)
+        let isFavorite
+        if(parsedStorage !== null){
+           isFavorite = parsedStorage.includes(this.props.info.id)
+        }
+        if(isFavorite){
+            this.setState({
+                favorito: true
+            })
         }
     }
 
@@ -25,6 +40,36 @@ class Cancion extends Component {
         }
     }
 
+    addFavorites(id){
+        let storage = localStorage.getItem('favoritos')
+
+        if(storage == null){
+            let idsArr = [id]
+            let idsArrToString = JSON.stringify(idsArr)
+            localStorage.setItem('favoritos', idsArrToString)
+        } else {
+            let parsedStorage = JSON.parse(storage)
+            parsedStorage.push(id)
+            let storageToString = JSON.stringify(parsedStorage)
+            localStorage.setItem('favoritos', storageToString)
+        }
+
+        this.setState({
+            favorito: true
+        })
+    }
+
+    removeFavorites(id){
+
+        let storage = localStorage.getItem('favoritos')
+        let storageParsed = JSON.parse(storage) 
+        let filteredStorage = storageParsed.filter(elm => elm !== id)
+        let storageToString = JSON.stringify(filteredStorage)
+        localStorage.setItem('favoritos', storageToString)
+        this.setState({
+            favorito: false
+        })
+    }
     render(){
         return (
                 
@@ -52,7 +97,12 @@ class Cancion extends Component {
                     <a onClick={() => this.changeShowMore()}> {this.state.textoBoton} </a>
                     <br></br>
                     <Link className='button' to={'/Detail/' + this.props.info.id}> Detalle</Link>
-                    <button className='button' onClick={()=> this.props.favorito(this.props.info.id)}>Favoritos</button>
+                    {
+                        this.state.favorito ?
+                        <button className='button' onClick={() => this.removeFavorites(this.props.info.id)}>Sacar favoritos</button>
+                        :
+                        <button className='button' onClick={() => this.addFavorites(this.props.info.id)}>Favoritos</button>
+                    }
                     <button className='button' onClick={() => this.props.borrar(this.props.info.id)}>Borrar</button>
             
                     </div>
