@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import Canciones from "../Canciones/Canciones";
 import './styles.css'
 
 class Favorites extends Component {
@@ -20,9 +21,9 @@ class Favorites extends Component {
                     
         
                 )}))
-        .then(data=> this.setState(
-            arrFavs=>data
-        ))
+        .then(data=> this.setState({
+            arrFavs:data
+            }))
         .catch(err => console.log(err))
             }
         }
@@ -32,7 +33,11 @@ class Favorites extends Component {
                 {
                 this.state.ready ? 
                 <div>
-
+                    {this.state.arrFavs.map((music, idx)=>
+                    <Canciones
+                    key={`${Date.now()}-${idx}`}
+                    info={music}
+                    />)}
                 </div>
                 :
                 <h1>Cargando...</h1>
