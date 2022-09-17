@@ -6,7 +6,9 @@ class Favorites extends Component {
         constructor(props){
             super(props)
             this.state = {
-                arrFavs:[]
+                arrFavs:[],
+                arrayAguardar: []
+                
             }
         }
         componentDidMount(){
@@ -33,11 +35,15 @@ class Favorites extends Component {
                 {
                 this.state.ready ? 
                 <div>
+<<<<<<< HEAD
                     {this.state.arrFavs.map((music, idx)=>
                     <Canciones
                     key={`${Date.now()}-${idx}`}
                     info={music}
                     />)}
+=======
+                <p>  </p>
+>>>>>>> 75bb51b8ef332fe52e7bd5df7211c0af0d1cbcae
                 </div>
                 :
                 <h1>Cargando...</h1>
