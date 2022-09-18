@@ -1,6 +1,4 @@
-import React, {
-  Component
-} from 'react'
+import React, {Component} from 'react'
 import Albums from '../../components/Albums/Albums';
 import Cancion from '../../components/Cancion/Cancion';
 import Canciones from '../../components/Canciones/Canciones'
@@ -45,23 +43,12 @@ class Home extends Component {
       }
       /> {
         this.state.readySearch ?
-          this.state.guardarValor.map((music, idx) => < Cancion key = {
-              `${Date.now()}-${idx}`
-            }
-            info = {
-              music
-            }
+          this.state.guardarValor.map((music, idx) => < Cancion 
+          key = {`${Date.now()}-${idx}`}
+          info = {music}
            /> ): ''
-          } {
-            /*
-                      this.state.ready
-                      ?
-                      <>
-                      <Canciones info={this.state.musica} />
-                      </> : 
-                        'Cargando..'
-                  */
-          } <Canciones / >
+          }
+          <Canciones / >
           <Albums / >
 
           </>

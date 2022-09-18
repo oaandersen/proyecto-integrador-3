@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import Busqueda from '../Busqueda/Busqueda';
 import Album from '../Album/Album';
 
 
@@ -12,7 +11,8 @@ import Album from '../Album/Album';
             backup: [],
             busqueda:'',
             pagina:0,
-            favorito:[]
+            favorito:[],
+            ready: false,
           }
         }
       
@@ -23,7 +23,8 @@ import Album from '../Album/Album';
             musica: data.data,
             backup: data.data,
             pagina: this.state.pagina + 1,
-            index: 10
+            index: 10,
+            ready:true,
           })
         console.log(data)})
           .catch(err => console.log(err))
@@ -46,14 +47,14 @@ import Album from '../Album/Album';
         favorites(id){
           let favoritoArr = this.state.musica.filter(elm => elm.id === id)
           this.setState({
-            favorito: this.state.favorito.concat(favoritoArr)
+            favoritoAlbum: this.state.favoritoAlbum.concat(favoritoArr)
           })
       
-          let arrayAGuardar = JSON.stringify(this.state.favorito)
+          let arrayAGuardar = JSON.stringify(this.state.favoritoAlbum)
       
-          localStorage.setItem('favoritos', arrayAGuardar)
+          localStorage.setItem('albumFavoritos', arrayAGuardar)
       
-          let recuperarStorage = localStorage.getItem('favoritos')
+          let recuperarStorage = localStorage.getItem('albumFavoritos')
           console.log(JSON.parse(recuperarStorage))
         }
       
@@ -76,6 +77,8 @@ import Album from '../Album/Album';
         render(){
             return (
               <>
+              { this.state.ready ?
+              <div>
                 <h2 className='titulo-home'>Top 10 Albums</h2>
                 <section className='canciones-card'>
                   {this.state.musica.map((music, idx) => 
@@ -89,7 +92,10 @@ import Album from '../Album/Album';
                     <button onClick={()=> this.backup()}>Backup</button>
                     <button onClick={()=> this.cargarMas()}>Cargar mas</button>
                 </section>
-               
+                </div>
+      :
+      <h1>Cargando...</h1>  
+      }
               </>
             )
           }

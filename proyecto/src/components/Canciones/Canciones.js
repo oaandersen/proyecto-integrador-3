@@ -47,16 +47,16 @@ import Cancion from '../Cancion/Cancion';
        
 
         favorites(id){
-          let favoritoArr = this.state.personajes.filter(elm => elm.id === id)
+          let favoritoArr = this.state.musica.filter(elm => elm.id === id)
           this.setState({
             favorito: this.state.favorito.concat(favoritoArr)
           })
       
           let arrayAGuardar = JSON.stringify(this.state.favorito)
       
-          localStorage.setItem('favoritos', arrayAGuardar)
+          localStorage.setItem('trackFavoritos', arrayAGuardar)
       
-          let recuperarStorage = localStorage.getItem('favoritos')
+          let recuperarStorage = localStorage.getItem('trackFavoritos')
           console.log(JSON.parse(recuperarStorage))
         }
       

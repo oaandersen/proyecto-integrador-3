@@ -13,7 +13,7 @@ class Cancion extends Component {
     }
 
     componentDidMount(){
-        let storage = localStorage.getItem('favoritos')
+        let storage = localStorage.getItem('trackFavoritos')
         let parsedStorage = JSON.parse(storage)
         let isFavorite
         if(parsedStorage !== null){
@@ -41,17 +41,17 @@ class Cancion extends Component {
     }
 
     addFavorites(id){
-        let storage = localStorage.getItem('favoritos')
+        let storage = localStorage.getItem('trackFavoritos')
 
         if(storage == null){
             let idsArr = [id]
             let idsArrToString = JSON.stringify(idsArr)
-            localStorage.setItem('favoritos', idsArrToString)
+            localStorage.setItem('trackFavoritos', idsArrToString)
         } else {
             let parsedStorage = JSON.parse(storage)
             parsedStorage.push(id)
             let storageToString = JSON.stringify(parsedStorage)
-            localStorage.setItem('favoritos', storageToString)
+            localStorage.setItem('trackFavoritos', storageToString)
         }
 
         this.setState({
@@ -61,11 +61,11 @@ class Cancion extends Component {
 
     removeFavorites(id){
 
-        let storage = localStorage.getItem('favoritos')
+        let storage = localStorage.getItem('trackFavoritos')
         let storageParsed = JSON.parse(storage) 
         let filteredStorage = storageParsed.filter(elm => elm !== id)
         let storageToString = JSON.stringify(filteredStorage)
-        localStorage.setItem('favoritos', storageToString)
+        localStorage.setItem('trackFavoritos', storageToString)
         this.setState({
             favorito: false
         })

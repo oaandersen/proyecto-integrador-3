@@ -7,10 +7,23 @@ class Album extends Component {
         super(props)
         this.state ={
             showMore:false,
-            textoBoton:'Ver mas'
+            textoBoton:'Ver mas',
+            favoritoAlbum: false,
         }
     }
-
+    componentDidMount(){
+        let storage = localStorage.getItem('albumFavoritos')
+        let parsedStorage = JSON.parse(storage)
+        let isFavorite
+        if(parsedStorage !== null){
+           isFavorite = parsedStorage.includes(this.props.info.id)
+        }
+        if(isFavorite){
+            this.setState({
+                favoritoAlbum: true
+            })
+        }
+    }
     changeShowMore(){
         if(this.state.showMore){
             this.setState({
@@ -23,6 +36,36 @@ class Album extends Component {
                 textoBoton: 'Ver menos'
             })
         }
+    }
+    addFavorites(id){
+        let storage = localStorage.getItem('albumFavoritos')
+
+        if(storage == null){
+            let idsArr = [id]
+            let idsArrToString = JSON.stringify(idsArr)
+            localStorage.setItem('albumFavoritos', idsArrToString)
+        } else {
+            let parsedStorage = JSON.parse(storage)
+            parsedStorage.push(id)
+            let storageToString = JSON.stringify(parsedStorage)
+            localStorage.setItem('albumFavoritos', storageToString)
+        }
+
+        this.setState({
+            favoritoAlbum: true
+        })
+    }
+
+    removeFavorites(id){
+
+        let storage = localStorage.getItem('albumFavoritos')
+        let storageParsed = JSON.parse(storage) 
+        let filteredStorage = storageParsed.filter(elm => elm !== id)
+        let storageToString = JSON.stringify(filteredStorage)
+        localStorage.setItem('albumFavoritos', storageToString)
+        this.setState({
+            favoritoAlbum: false
+        })
     }
 
     render(){
@@ -49,9 +92,14 @@ class Album extends Component {
                     }
                     <a onClick={() => this.changeShowMore()}> {this.state.textoBoton} </a>
 
-                    <Link to={'/DetailAlbum/' + this.props.info.album.id}> Detalle</Link>
-                    <button onClick={()=> this.props.favorito(this.props.info.id)}>Favoritos</button>
-                    <button onClick={() => this.props.borrar(this.props.info.id)}>Borrar</button>
+                    <Link className='button' to={'/DetailAlbum/' + this.props.info.album.id}> Detalle</Link>
+                    {
+                        this.state.favoritoAlbum ?
+                        <button className='button' onClick={() => this.removeFavorites(this.props.info.id)}>Sacar favoritos</button>
+                        :
+                        <button className='button' onClick={() => this.addFavorites(this.props.info.id)}>Favoritos</button>
+                    }
+                    <button className='button' onClick={() => this.props.borrar(this.props.info.id)}>Borrar</button>
                 </div>
 
             )
