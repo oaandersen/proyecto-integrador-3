@@ -7,11 +7,7 @@ class Home extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      musica: {},
-      backup: {},
-      buscar: false,
       guardarValor: [],
-      ready: false,
       readySearch: false,
     }
   }
@@ -24,7 +20,6 @@ class Home extends Component {
           console.log(data)
           this.setState({
             guardarValor: data.data,
-            buscar: true,
             readySearch: true,
           })
         })
