@@ -58,3 +58,16 @@
     font-family: 'Helvetica', sans-serif;
     border-radius: 50px;
 }
+.section-boton{
+    background-color: #E1F5FF;
+    padding-bottom: 15px;
+    padding-left: 40px;
+}
+.boton3{
+    border: 2px solid black;
+    padding: 10px;
+    background-color:  #E1F5FF;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 30px;
+}
