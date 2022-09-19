@@ -1,0 +1,60 @@
+.canciones-card{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #E1F5FF;
+    padding: 20px;
+    
+}
+.cancion-card{
+    background-color: rgb(255, 254, 246);
+    text-align: center;
+    padding: 10px;
+    border-radius: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 200px;
+    margin-top: 10px;
+}
+.cancion-card img{
+    width: 100%;
+}
+.artista-text{
+    color: mediumslateblue;
+    line-height: 10px;
+}
+.links{
+    background-color: #e87979;
+    border-radius: 10px;
+    padding: 5px;
+    cursor: pointer;
+    cursor: hand;
+}
+.detalle{
+    color:lightsteelblue;
+    border-radius: 10px;
+    padding: 5px;
+    cursor: pointer;
+    cursor: hand;
+}
+.boton{
+    border: 1px solid #2e518b;
+    padding: 10px;
+    background-color: #2e518b;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Helvetica', sans-serif;
+    border-radius: 50px;
+}
+
+.boton2{
+    border: 1px solid #d54083;
+    padding: 10px;
+    background-color: #8a254c;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Helvetica', sans-serif;
+    border-radius: 50px;
+}

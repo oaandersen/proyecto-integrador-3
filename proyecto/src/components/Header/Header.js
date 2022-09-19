@@ -1,20 +1,11 @@
-import React, {Component} from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 import './styles.css'
 
-class Header extends Component {
-    constructor(props){
-      super(props)
-      this.state={
-        musica: [],
-        backup: [],
-        busqueda:'',
-      }
-    } 
 
-  
-      render(){
+function Header() {
+ 
     return (
         <>
             <header className='header'>
@@ -38,8 +29,7 @@ class Header extends Component {
         </>
     )
 }
-    }
-
+    
 export default Header;
 
 

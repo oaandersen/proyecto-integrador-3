@@ -59,7 +59,8 @@ class Favorites extends Component {
         render(){
             return(
                 <>
-                <h1>Tus canciones favoritas</h1>
+                <div>
+                <h1 className='titulo-home'>Tus canciones favoritas</h1>
                 {
                 this.state.ready ? 
                     
@@ -80,6 +81,7 @@ class Favorites extends Component {
                 /> ): ""
             
                 }
+                </div>
                 </>
             )
         }
