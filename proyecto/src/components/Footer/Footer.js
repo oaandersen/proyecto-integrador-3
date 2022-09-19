@@ -12,8 +12,8 @@ function Footer(){
                     <img className='icono' src="https://cdn-icons-png.flaticon.com/512/888/888853.png" alt="Gmail"/>
                         <ul>
                             <li>fbory@udesa.edu.ar</li>
-                            <li>@oandersen@udesa.edu.ar</li>
-                            <li>@ntufro@udesa.edu.ar</li>
+                            <li>oandersen@udesa.edu.ar</li>
+                            <li>ntufro@udesa.edu.ar</li>
                         </ul>
                      
                 </article>

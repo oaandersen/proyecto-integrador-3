@@ -70,7 +70,7 @@ class Album extends Component {
 
     render(){
         return (
-                <div className="Album-card">
+                <div className="album-card">
                     <img 
                         src={this.props.info.album.cover}
                         alt={`Una imagen de ${this.props.info.name}`}
@@ -90,16 +90,16 @@ class Album extends Component {
                     : 
                     ''
                     }
-                    <a onClick={() => this.changeShowMore()}> {this.state.textoBoton} </a>
+                    <a onClick={() => this.changeShowMore()}> {this.state.textoBoton} </a><br></br><br></br>
 
-                    <Link className='button' to={'/DetailAlbum/' + this.props.info.album.id}> Detalle</Link>
+                    <Link className='links' to={'/DetailAlbum/' + this.props.info.album.id}> Detalle</Link><br></br><br></br>
                     {
                         this.state.favoritoAlbum ?
                         <button className='button' onClick={() => this.removeFavorites(this.props.info.id)}>Sacar favoritos</button>
                         :
                         <button className='button' onClick={() => this.addFavorites(this.props.info.id)}>Favoritos</button>
                     }
-                    <button className='button' onClick={() => this.props.borrar(this.props.info.id)}>Borrar</button>
+                    <button className='button2' onClick={() => this.props.borrar(this.props.info.id)}>Borrar</button>
                 </div>
 
             )
