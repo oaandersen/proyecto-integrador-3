@@ -64,8 +64,8 @@ class Favorites extends Component {
     render() {
         return (
             <>
-                    <h1 >Tus canciones favoritas</h1>
-                    <div className="canciones-card">
+                <h1 >Tus canciones favoritas</h1>
+                <div className="canciones-card">
                     {
                         this.state.ready ?
 

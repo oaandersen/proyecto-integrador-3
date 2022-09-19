@@ -35,17 +35,17 @@ class Detalle extends Component {
             
             <>
             
-            {
-                
-                    
-                this.state.ready ? <div>
-                <img 
+            {this.state.ready ? 
+            <div  className='canciones-card'>
+                <img className='img'
                 src={this.state.musica.album.cover}
                 alt={`Una imagen de ${this.state.musica.album.cover}`}
             />
+            <ul>
                 <h1>Cancion: {this.state.musica.title}</h1>
                 <h1>Artista: {this.state.musica.artist.name}</h1>
-                <h2>Disco: {this.state.musica.album.title}</h2>
+                <h1>Disco: {this.state.musica.album.title}</h1>
+                </ul>
                 <iframe title="iframe" src={this.state.musica.preview} />
                 </div>  
                 :
