@@ -17,7 +17,9 @@ function Header() {
                 <nav>
                     <Link to='/'>Home</Link>
 
-                    <Link to='/Favoritos'>Favoritos</Link>
+                    <Link to='/FavsAlbum'>Albumes Favoritos</Link>
+
+                    <Link to='/FavsCanciones'>Canciones Favoritos</Link>
 
                     <Link to='/ViewAll'>View All</Link>
                 </nav>

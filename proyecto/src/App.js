@@ -7,7 +7,8 @@ import DetailAlbum from './screens/DetailAlbum/DetailAlbum'
 import Home from './screens/Home/Home'
 import PaginaNotFound from './screens/PaginaNotFound/PaginaNotFound'
 import ViewAll from './screens/ViewAll/ViewAll'
-import Favoritos from './screens/Favoritos/Favoritos'
+import FavsAlbum from './screens/FavsAlbum/FavsAlbum'
+import FavsCanciones from './screens/FavsCanciones/FavsCanciones'
 
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
         <Route path={'/Detail/:id'} component={Detail} />
         <Route path={'/DetailAlbum/:id'} component={DetailAlbum} />
         <Route path={'/ViewAll'} component={ViewAll} />
-        <Route path={'/Favoritos'} component={Favoritos} />
+        <Route path={'/FavsAlbum'} component={FavsAlbum} />
+        <Route path={'/FavsCanciones'} component={FavsCanciones} />
         <Route path={''} component={PaginaNotFound} />
         <Route path={'/ViewAll'} component={ViewAll} />
       </Switch>
@@ -28,3 +30,4 @@ function App() {
   );
 }
 export default App;
+

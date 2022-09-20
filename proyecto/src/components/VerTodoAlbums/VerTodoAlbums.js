@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import './styles.css'
 
 class VerTodoAlbums extends Component {
     constructor(props) {

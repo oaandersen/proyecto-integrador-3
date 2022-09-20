@@ -59,7 +59,7 @@ class Album extends Component {
     removeFavorites(id){
 
         let storage = localStorage.getItem('albumFavoritos')
-        let storageParsed = JSON.parse(storage) 
+        let storageParsed = JSON.parse(storage)
         let filteredStorage = storageParsed.filter(elm => elm !== id)
         let storageToString = JSON.stringify(filteredStorage)
         localStorage.setItem('albumFavoritos', storageToString)
@@ -72,32 +72,32 @@ class Album extends Component {
         return (
                 <div className="album-card">
                     <img 
-                        src={this.props.info.album.cover}
+                        src={this.props.info.cover}
                         alt={`Una imagen de ${this.props.info.name}`}
                     />
-        
-                    <h3> Album: {this.props.info.album.title}</h3>
+       
+                    <h3> Album: {this.props.info.title}</h3>
 
-                    
-                
+                   
+               
                     {
                     this.state.showMore ?
-                    
+                   
                         <div> 
                         <h4>Descripcion Album: No hay descripcion en este Album!</h4>
                         <h4>{}</h4>
                         </div>
-                    : 
+                    :
                     ''
                     }
                     <a onClick={() => this.changeShowMore()}> {this.state.textoBoton} </a><br></br><br></br>
 
-                    <Link className='links' to={'/DetailAlbum/' + this.props.info.album.id}> Detalle</Link><br></br><br></br>
+                    <Link className='links' to={'/DetailAlbum/' + this.props.info.id}> Detalle</Link><br></br><br></br>
                     {
                         this.state.favoritoAlbum ?
-                        <button className='button' onClick={() => this.removeFavorites(this.props.info.album.id)}>Sacar favoritos</button>
+                        <button className='button' onClick={() => this.removeFavorites(this.props.info.id)}>Sacar favoritos</button>
                         :
-                        <button className='button' onClick={() => this.addFavorites(this.props.info.album.id)}>Favoritos</button>
+                        <button className='button' onClick={() => this.addFavorites(this.props.info.id)}>Favoritos</button>
                     }
                     <button className='button2' onClick={() => this.props.borrar(this.props.info.id)}>Borrar</button>
                 </div>
